@@ -1,0 +1,57 @@
+﻿@model List<PostGetDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <a asp-action="create" asp-controller="Post">
+        <i class="mdi mdi-bookmark-plus
+"></i>
+    </a>
+</div>
+<div class="row">
+    <div class="col-md-12 stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title">Recent Purchases</p>
+                <div class="table-responsive">
+                    <table id="recent-purchases-listing" class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Title</th>
+                                <th>Description</th>
+
+                            </tr>
+                        </thead>
+                        @if (Model != null)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                
+                            <tbody>
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.Title</td>
+                                    <td><img src="~/assets/images/@item.Image"/></td>
+                                    <td>
+                                        <a asp-action="update" asp-controller="Post" asp-route-id="@item.Id">
+                                            <i class="mdi mdi-border-color"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                            <a asp-action="delete" asp-controller="Post" asp-route-id="@item.Id">
+                                            <i class="mdi mdi-delete"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

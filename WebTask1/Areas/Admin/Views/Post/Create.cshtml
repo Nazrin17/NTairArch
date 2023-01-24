@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model PostCreateDto
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Default form</h4>
+                        <p class="card-description">
+                            Basic form layout
+                        </p>
+                        <form class="forms-sample" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Title</label>
+                                <input asp-for="@Model.Title" placeholder="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Description</label>
+                                <input asp-for="@Model.Description" placeholder="Description">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Description</label>
+                                <input asp-for="@Model.formFile" placeholder="Image">
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <button class="btn btn-light">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
